@@ -20,6 +20,14 @@ RSpec.describe Pivot do
         expect(pivot.get).to eq 1
       end
     end
+
+    context "Given [1, 2, 3, 4 ,5]" do
+      let(:integers) { [1, 2, 3, 4, 5] }
+
+      it "returns -1" do
+        expect(pivot.get).to eq -1
+      end
+    end
   end
 
 end

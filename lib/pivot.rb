@@ -2,6 +2,8 @@ class Pivot
 
   attr_reader :integers
 
+  NONE_FOUND = -1
+
   def initialize(integers)
     @integers = integers
   end
@@ -13,6 +15,8 @@ class Pivot
 
       return index if equal_sum?(left, right)
     end
+
+    return NONE_FOUND
   end
 
   private
