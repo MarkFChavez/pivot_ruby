@@ -1,3 +1,4 @@
+## Problem
 Write a method that returns the "pivot" index of a list of integers. We 
 define the pivot index as the index where the sum of the numbers on the 
 left is equal to the sum of the numbers on the right. Given [1, 4, 6, 3, 2], 

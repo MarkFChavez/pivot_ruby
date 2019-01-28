@@ -1,29 +1,31 @@
 class Pivot
 
-  attr_reader :integers
+  attr_reader :numbers
 
-  NONE_FOUND = -1
+  NO_PIVOT_FOUND = -1
 
-  def initialize(integers)
-    @integers = integers
+  def initialize(numbers)
+    @numbers = numbers
   end
 
   def get
-    integers.each_index do |index|
-      next if index == 0
+    last_idx = numbers.length - 1
 
-      left  = integers.slice(0, index)
-      right = integers.slice(index + 1, integers.length - 1)
+    numbers.each_index do |current_idx|
+      next if current_idx == 0
 
-      return index if equal_sum?(left, right)
+      left  = numbers.slice(0, current_idx)
+      right = numbers.slice(current_idx + 1, last_idx)
+
+      return current_idx if pivot_found?(left, right)
     end
 
-    return NONE_FOUND
+    NO_PIVOT_FOUND
   end
 
   private
 
-  def equal_sum?(left, right)
+  def pivot_found?(left, right)
     Array(left).sum == Array(right).sum
   end
 
