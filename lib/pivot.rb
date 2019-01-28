@@ -13,6 +13,7 @@ class Pivot
 
     numbers.each_index do |current_idx|
       next if current_idx == 0
+      next if current_idx == last_idx
 
       left  = numbers.slice(0, current_idx)
       right = numbers.slice(current_idx + 1, last_idx)
