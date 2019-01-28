@@ -21,6 +21,14 @@ RSpec.describe Pivot do
       end
     end
 
+    context "Given [0, 0, 0, 0]" do
+      let(:integers) { [0, 0, 0, 0] }
+
+      it "returns index 1" do
+        expect(pivot.get).to eq 1
+      end
+    end
+
     context "Given [1, 2, 3, 4 ,5]" do
       let(:integers) { [1, 2, 3, 4, 5] }
 

@@ -9,7 +9,9 @@ class Pivot
   end
 
   def get
-    integers.each do |index, num|
+    integers.each_index do |index|
+      next if index == 0
+
       left  = integers.slice(0, index)
       right = integers.slice(index + 1, integers.length - 1)
 
