@@ -5,6 +5,14 @@ RSpec.describe Pivot do
   let(:pivot) { described_class.new(integers) }
 
   describe ".get" do
+    context "Given [1, 4, 6, 3, 2" do
+      let(:integers) { [1, 4, 6, 3, 2] }
+
+      it "returns index 2" do
+        expect(pivot.get).to eq 2
+      end
+    end
+
     context "Given [1, 3, 5, 2, 2]" do
       let(:integers) { [1, 3, 5, 2, 2] }
 
